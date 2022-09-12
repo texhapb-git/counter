@@ -17,7 +17,7 @@ const CountersList = () => {
         setCounters(newCounters);
     };
 
-    const handeleIncrement = (counterId) => {
+    const handleIncrement = (counterId) => {
         const newCounters = counters.map(counter => {
             if (counter.id === counterId) {
                 return { ...counter, value: counter.value + 1 }
@@ -29,7 +29,7 @@ const CountersList = () => {
         setCounters(newCounters);
     }
 
-    const handeleDecrement = (counterId) => {
+    const handleDecrement = (counterId) => {
         const newCounters = counters.map(counter => {
             if (counter.id === counterId) {
                 return { ...counter, value: counter.value - 1 }
@@ -49,7 +49,7 @@ const CountersList = () => {
     return (
         <>
             {counters.map((count) => (
-                <Counter key={count.id} onDelete={handleDelete} onIncrement={handeleIncrement} onDecrement={handeleDecrement} {...count} />
+                <Counter key={count.id} onDelete={handleDelete} onIncrement={handleIncrement} onDecrement={handleDecrement} {...count} />
             ))}
 
             <button
